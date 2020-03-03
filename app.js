@@ -37,12 +37,16 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
         document.querySelector('#current-' + activePlayer).textContent = roundScore;
     } else {
         //next player
+        //if active player is 0 then active player must have rolled 1 so then active player gets 0 points
         activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+        //and reset the roundscore to 0
         roundScore = 0;
 
+        //each time a new player starts rolling, the roundscore should be 0
         document.getElementById('current-0').textContent = '0';
         document.getElementById('current-1').textContent = '0';
 
+        //this denotes with HTML and CSS .active class, which player is the active roller
         document.querySelector('.player-0-panel').classList.toggle('active');
         document.querySelector('.player-1-panel').classList.toggle('active');
 
