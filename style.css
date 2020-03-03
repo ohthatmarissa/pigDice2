@@ -161,9 +161,10 @@ i {
 }
 
 .winner {
-  background-color: #f7f7f7;
+  background-color: white;
 }
 .winner .player-name {
-  font-weight: 300;
+  font-weight: 500;
+  font-size: 75px;
   color: #da5bcf;
 }
