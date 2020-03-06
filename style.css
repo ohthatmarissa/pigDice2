@@ -48,13 +48,21 @@ body {
 *** PLAYERS
 **********************************************/
 
+h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px;
+  font-size: 100px;
+}
+
 .player-name {
   font-size: 40px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 100;
-  margin-top: 20px;
+  margin-top: 80px;
   margin-bottom: 10px;
   position: relative;
 }
@@ -142,7 +150,7 @@ i {
 }
 
 .btn-new {
-  top: 45px;
+  top: 140px;
 }
 .btn-roll {
   top: 403px;
@@ -167,4 +175,18 @@ i {
   font-weight: 500;
   font-size: 75px;
   color: #da5bcf;
+}
+
+.final-score {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 520px;
+  color: #555;
+  font-size: 18px;
+  font-family: "Lato";
+  text-align: center;
+  padding: 10px;
+  width: 160px;
+  text-transform: uppercase;
 }
