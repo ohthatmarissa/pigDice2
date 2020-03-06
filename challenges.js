@@ -24,7 +24,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
         diceDOM.src = 'dice-' + dice + '.png';
 
         //challenge to add that if 2 sixes are rolled in a roll, the active player will lose thier score
-        if (dice === 6 && kastDice === 6) {
+        if (dice === 6 && lastDice === 6) {
             scores[activePlayer] = 0;
             document.querySelector('#score-' + activePlayer).textContent = '0';
             nextPlayer();
@@ -51,8 +51,19 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
         //whichever player is active take the score of that player and add to the global score
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer]
 
+        var input = document.querySelector('.final-score').value;
+        var winningScore;
+
+        //undefined, 0, null, or ' ' are coerced to false
+        //anyhing else is coerced to true
+        if (input) {
+            winningScore = input;
+        } else {
+            winningScore = 100;
+        }
+
         //check if the player won the game
-        if (scores[activePlayer] >= 20) {
+        if (scores[activePlayer] >= winningScore) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
